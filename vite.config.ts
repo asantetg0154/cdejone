@@ -159,6 +159,7 @@ const plugins = [
 ];
 
 export default defineConfig({
+  base: process.env.GITHUB_ACTIONS ? "/cdejone/" : "/",
   plugins,
   resolve: {
     alias: {
