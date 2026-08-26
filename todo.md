@@ -1,0 +1,25 @@
+# Project TODO
+
+- [x] Define the multi-tenant organization boundary, role catalogue, permission model, sensitive-data domains, audit events, and human approval states.
+- [x] Extend the database schema with tenants, memberships, roles, permissions, periods, participants, activities, objectives, indicators, results, documents, imports, tasks, risks, decisions, reports, and assistant interactions.
+- [x] Apply the schema migration and validate tenant isolation queries.
+- [x] Implement secured tRPC procedures for dashboard data, data hub entities, workflows, planning, reports, imports, and assistant history.
+- [x] Implement server-side validation so generated content is grounded only in validated, authorized records and source documents.
+- [x] Build a responsive French institutional design system with accessible components and desktop/mobile navigation.
+- [x] Build the coordinator dashboard with CDEJ status, prioritized signals, key indicators, data quality, overdue work, and risks.
+- [x] Build the CDEJ Data Hub for organizations, participants, activities, objectives, indicators, results, documents, tasks, risks, decisions, and periods.
+- [x] Build the document intake flow with file upload, preview, proposed mapping, anomaly checks, duplicate checks, validation, provenance, and data-quality visibility.
+- [x] Build analytics separating delivery, participation, results, and impact, with period comparison, trends, and limitations.
+- [x] Build the FY planning workspace with diagnostic, proposed objectives and activities, ownership, indicators, budget assumptions, and three editable scenarios.
+- [x] Build workflow management with assignments, due dates, escalation status, approval states, and immutable decision traceability.
+- [x] Build editable report and meeting-preparation drafts derived from validated data, with export-ready layouts.
+- [x] Build Ask CDEJ with authorization-aware grounded answers, citations, uncertainty notices, and no autonomous final decision.
+- [x] Create clearly labelled fictional demonstration data and end-to-end CDEJ usage scenarios.
+- [x] Add Vitest coverage for permissions, grounded response rules, validation states, planning calculations, and critical procedures.
+- [x] Add automated verification that tenant scope rejects cross-organization entities and procedures retain organization filters.
+- [x] Add explicit fictional end-to-end demo scenarios covering import, dashboard, planning, workflow, report, and Ask CDEJ.
+- [x] Verify desktop and mobile interfaces, resolve browser or server errors, and mark completed items.
+- [x] Verify authenticated route data with the pilot workspace (dashboard, data hub, planning, analytics, workflows, reports, and authorized assistant context); the responsive access shell was also checked.
+- [ ] Verify authenticated browser routes on the current preview URL after a fresh login, on desktop and mobile, including dashboard, data hub, import, planning, workflows, reports, and Ask CDEJ.
+- [x] Initialize the pilot workspace with clearly labelled fictional data before reviewing authenticated operational routes.
+- [ ] Save the final checkpoint containing pilot initialization and verification scripts, then provide the project version for review.
