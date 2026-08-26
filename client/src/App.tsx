@@ -6,7 +6,8 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 
-const basePath = import.meta.env.BASE_URL.replace(/\/$/, "") || "/";
+const configuredBase = import.meta.env.BASE_URL;
+const basePath = configuredBase.endsWith("/") ? configuredBase.slice(0, -1) : configuredBase;
 
 function Router() {
   return <WouterRouter base={basePath}>
