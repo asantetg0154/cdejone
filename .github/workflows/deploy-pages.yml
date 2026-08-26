@@ -1,0 +1,49 @@
+name: Déployer CDEJ ONE sur GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+      - name: Configurer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Configurer pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - name: Installer les dépendances
+        run: pnpm install --frozen-lockfile
+      - name: Construire le site statique
+        run: pnpm build
+        env:
+          GITHUB_ACTIONS: "true"
+          NODE_OPTIONS: --max-old-space-size=2048
+      - name: Préparer le fallback SPA
+        run: cp dist/public/index.html dist/public/404.html
+      - name: Téléverser l’artefact Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/public
+      - name: Déployer sur GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
